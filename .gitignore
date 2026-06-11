@@ -1,0 +1,38 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+include/secrets.h
+secrets.h
+secrets.*
+*.secret
+*.secrets
+!include/secrets.example.h
+
+# Local backups that may contain hardcoded credentials
+backup/
+
+# Build outputs and firmware artifacts
+*.bin
+*.elf
+*.map
+*.hex
+
+# IDE and editor state
+.vscode/.browse.c_cpp.db*
+.vscode/extensions.json
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
