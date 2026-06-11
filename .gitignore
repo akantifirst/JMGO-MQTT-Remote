@@ -17,6 +17,9 @@ secrets.*
 # Local backups that may contain hardcoded credentials
 backup/
 
+# Local project notes
+PROJECT_DOCUMENTATION.md
+
 # Build outputs and firmware artifacts
 *.bin
 *.elf

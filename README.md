@@ -12,7 +12,10 @@ ESP32 firmware that controls a JMGO projector from MQTT. It wakes the projector 
 
 ## Hardware And Stack
 
-- ESP32 development board.
+- Supported ESP boards:
+  - ESP32 Dev Module / ESP32 DevKit.
+  - ESP32-WROOM-32 based boards.
+  - ESP32-WROVER based boards.
 - PlatformIO with Arduino framework.
 - Libraries:
   - `h2zero/NimBLE-Arduino`
@@ -20,13 +23,15 @@ ESP32 firmware that controls a JMGO projector from MQTT. It wakes the projector 
 - A JMGO projector reachable from the same LAN.
 - MQTT broker, such as Mosquitto or Home Assistant MQTT.
 
+## Tested Projectors
+
+- JMGO N1
+- JMGO N1S
+- JMGO N1 Ultra
+
 ## Configuration
 
-Secrets are not stored in tracked source files. Copy the example header and fill in your local values:
-
-```bash
-cp include/secrets.example.h include/secrets.h
-```
+Secrets are not stored in tracked source files. Create a local `secrets.h` file in your PlatformIO include path and fill in your local values.
 
 Configure:
 
@@ -35,7 +40,7 @@ Configure:
 - OTA hostname and password.
 - Projector IP address and LAN control port.
 
-The same variable names are listed in `.env.example` for documentation or external automation. The firmware itself uses `include/secrets.h`.
+The same variable names are listed in `.env.example` for documentation or external automation. The firmware itself uses `secrets.h`.
 
 ## MQTT
 
@@ -91,6 +96,3 @@ Monitor serial output:
 pio device monitor -b 115200
 ```
 
-## Repository Hygiene
-
-Ignored local files include PlatformIO build output, firmware binaries, IDE machine paths, `.env` files, `include/secrets.h`, and the local `backup/` directory because it may contain older hardcoded credentials.
